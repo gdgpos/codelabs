@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-04-25T13:24:24Z",
+  "id": "fb-host",
+  "duration": 0,
+  "title": "Deploy with Firebase Hosting",
+  "authors": "Nicholas Mendez",
+  "summary": "This code lab will show you how to deploy a web app to firebase",
+  "source": "1OwPTZpWWyBCZ4lw6IrywXUTWffUwXa-Ia-e5-OEf3EA",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "Web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "ga": "UA-125449543-1",
+  "url": "fb-host"
+}

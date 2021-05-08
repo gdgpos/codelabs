@@ -1,0 +1,195 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Deploy with Firebase Hosting</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid="UA-125449543-1"
+                  id="fb-host"
+                  title="Deploy with Firebase Hosting"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p class="image-container"><img style="width: 624.00px" src="img\bfdfe865bff364b3.png"></p>
+<h2 is-upgraded><strong>Firebase</strong></h2>
+<p>Firebase is an application development platform by Google and consists of a suite of products geared towards quick development and business growth. In this lab we shall deploy an application to firebase hosting.</p>
+<p>Once you have a gmail account you can start creating a firebase project by clicking the following link.</p>
+<p><a href="https://console.firebase.google.com/u/1/" target="_blank"><paper-button class="colored" raised>Create Firebase Project</paper-button></a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Setting up a Project" duration="0">
+        <h2 is-upgraded><strong>Task 1</strong></h2>
+<p>Click on add project.</p>
+<p class="image-container"><img style="width: 320.00px" src="img\dd5e9de8d4b7850b.png"></p>
+<p>Give it a name then enable google analytics as it is needed for this code lab.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\fb160e862db51d4f.png"></p>
+<p>In configuring google analytics you can select &#34;create an account&#34; from the dropdown. Enter a name, select United States and location then you only needed to accept the Google Analytics terms  then click &#34;Create Project&#34;</p>
+<p class="image-container"><img style="width: 624.00px" src="img\cf76e29ec8943b5f.png"></p>
+<p>After creation you will then be directed to the project dashboard.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\552ed360c9cd2e98.png"></p>
+<p>From here we want to add a web application to the project by clicking on the &#34;&lt;/&gt;&#34; icon.</p>
+<p class="image-container"><img style="width: 584.00px" src="img\384e6f3d8ea85f42.png"></p>
+<p>Give the application a name then select &#34;Also set up Firebase Hosting for  this app&#34;</p>
+<p>Then keep clicking &#34;Next&#34; and finally &#34;Continue to console&#34;</p>
+<p class="image-container"><img style="width: 526.00px" src="img\9392f9ccbe7dee5b.png"></p>
+<p>Finally we have created a firebase project and added a web application.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Using Gitpod" duration="0">
+        <p>For our code labs we recommend <a href="https://www.gitpod.io/" target="_blank">gitpod</a> as a development environment because it allows us to get you directly into a workspace with all dependencies automatically included. To begin, ensure that you have a <a href="https://github.com/join" target="_blank">github account</a> to login with then click the following link.</p>
+<p><a href="https://gitpod.io/#https://github.com/gdgpos/labs/codelab1/" target="_blank"><paper-button class="colored" raised>Open Gitpod Workspace</paper-button></a></p>
+<aside class="special"><p>If you want to work on your own machine you can clone the code lab at the <a href="https://github.com/gdgpos" target="_blank">gdgpos git repository</a>.</p>
+</aside>
+<p>After logging in and loading up the workspace, the firebase-cli should already be installed.  To login into the firebase cli, open up a new terminal from the toolbar.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\241b84989a476f2.png"></p>
+<h2 is-upgraded><strong>Task 3</strong></h2>
+<p>Execute the following command in the terminal.</p>
+<pre>firebase login --no-localhost</pre>
+<p>The <code>--no-localhost</code> flag is required as we are running this via the cloud in gitpod. Answer ‘y&#39; if asked to collect CLI usage. Then ctrl + click the link given in the terminal.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\7ec37ef425b89634.png"></p>
+<p>The link would take you to a sign-in page. Sign in with the same google account used to create the project then click allow. It should then give a code which you will need to copy (ctrl +c) and paste into the gitpod terminal (ctrl + shift + v).</p>
+<p class="image-container"><img style="width: 624.00px" src="img\5408db3889443f95.png"></p>
+<p>Press enter after pasting then you should be logged into the CLI.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Initialize firebase" duration="0">
+        <p>Next you need to initialize the workspace as a firebase project then you would be able to deploy.</p>
+<h2 is-upgraded>Task 4</h2>
+<p>Type and run the following command in the terminal.</p>
+<pre>firebase init</pre>
+<p>On the following menu use the down arrow key to highlight hosting and tap the spacebar to select it then press enter.</p>
+<p class="image-container"><img style="width: 552.00px" src="img\b17878b13878cff4.png"></p>
+<p>Then select &#34;Use an existing project&#34;.</p>
+<p class="image-container"><img style="width: 581.00px" src="img\4d55acad162d9370.png"></p>
+<p>Then select the project you created on the firebase console.</p>
+<p class="image-container"><img style="width: 457.00px" src="img\10190a8750db3fa0.png"></p>
+<p>Press enter for the remaining prompts.</p>
+<p class="image-container"><img style="width: 573.00px" src="img\18a1ef2d45631613.png"></p>
+<p>Firebase should finally be initialized.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Setting up performance monitoring" duration="0">
+        <p>When you deploy an app to firebase hosting, the various firebase javascript libraries are also hosted on the same server. This means you can <a href="https://firebase.google.com/docs/hosting/reserved-urls" target="_blank">add SDKs via reserved Hosting URLs</a>. </p>
+<h2 is-upgraded><strong>Task 6</strong></h2>
+<p>We shall update <code>index.html</code> to add the following javascript files:</p>
+<ul>
+<li>firebase-app.js: main firebase sdk/library</li>
+<li>firebase-performance.js: sdk for performance monitoring</li>
+<li>init.js: automatically initializes firebase with your project&#39;s configuration</li>
+<li>first-input-delay.min.js : a javascript library which measures how long the app takes to load on the client</li>
+</ul>
+<p>For the best measurement accuracy we should include first-input-delay.min.js in the head section of the page. Add the following line to index.html at the bottom of the head tag.</p>
+<pre><code>&lt;script src=&#34;https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/src/first-input-delay.min.js&#34;&gt;&lt;/script&gt;
+&lt;!--- before &lt;/head&gt; --&gt;    </code></pre>
+<p>Then we add the remaining js files in the bottom of the body tag before main.js. We also add a snipped which initializes first-input-delay.min.js </p>
+<p><code>index.html</code></p>
+<pre><code>&lt;script src=&#34;/__/firebase/7.14.1/firebase-app.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/__/firebase/7.14.1/firebase-performance.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/__/firebase/init.js&#34;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+//initialize firebase performance
+const perf = firebase.performance();
+
+// The perfMetrics object is created by the code that goes in &lt;head&gt;.
+perfMetrics.onFirstInputDelay(function(delay, evt) {
+  ga(&#39;send&#39;, &#39;event&#39;, {
+    eventCategory: &#39;Perf Metrics&#39;,
+    eventAction: &#39;first-input-delay&#39;,
+    eventLabel: evt.type,
+    // Event values must be an integer.
+    eventValue: Math.round(delay),
+    // Exclude this event from bounce rate calculations.
+    nonInteraction: true,
+  });
+});
+&lt;/script&gt;
+  
+&lt;!--- before main.js in the body tag --&gt;</code></pre>
+<p>And that&#39;s all we need to do to monitor the performance of our app!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Serving" duration="0">
+        <p>While working on your web app typically you would like to preview the application.</p>
+<h2 is-upgraded>Task 5</h2>
+<p>Type an run the following command</p>
+<pre>firebase serve</pre>
+<p class="image-container"><img style="width: 406.00px" src="img\3790917b6c3fe0dc.png"></p>
+<p>Firebase would start a development server on  port 5000.</p>
+<p>Gitpod would detect something is running on the port. To view the site click &#34;Make Public&#34; then press &#34;Open Preview&#34;</p>
+<p class="image-container"><img style="width: 567.00px" src="img\4900c8bc7f242c23.png"></p>
+<p>You can then view your site running right in gitpod!</p>
+<p class="image-container"><img style="width: 624.00px" src="img\9277600e8b60271b.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Deployment" duration="0">
+        <p>Next, we would like to deploy the application to firebase hosting. First ensure that all of your website&#39;s files are in the public folder (In this code lab it already is).</p>
+<h2 is-upgraded><strong>Task 6</strong></h2>
+<p>Because the serve command is still running in the terminal it is said to be ‘non interactive&#39;. You can open a new terminal or cancel the serve command by clicking in to the terminal and pressing &#34;ctrl + c&#34;.</p>
+<p><img style="width: 624.00px" src="img\c995ae3fa5bbc52a.png"><br><br> Now execute the following command.</p>
+<pre>firebase deploy</pre>
+<p class="image-container"><img style="width: 624.00px" src="img\4e41a61f6ecc372.png"></p>
+<p>You would be given a link to view your deployed application. Follow the link (ctrl + click) to see your application hosted for free over https!</p>
+<p class="image-container"><img style="width: 516.04px" src="img\5ca707effd0edd0b.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Monitoring Performance" duration="0">
+        <p>Go back to your project dashboard on the firebase <a href="https://console.firebase.google.com/" target="_blank">console</a>. Then navigate to Performance.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\50a18d615b36cb43.png"></p>
+<p>You should see that performance monitoring has been setup for your application! After some time you can view metrics as shown below.</p>
+<p class="image-container"><img style="width: 522.50px" src="img\c4b5fdb3de9cb917.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Conclusion" duration="0">
+        <p>And that&#39;s how you can deploy a project for free on firebase hosting!</p>
+<h2 is-upgraded>References &amp; Additional Reading</h2>
+<p><a href="https://firebase.google.com/docs/hosting" target="_blank">Firebase Hosting</a></p>
+<p><a href="https://firebase.google.com/docs/perf-mon/get-started-web" target="_blank">Firebase Performance Monitoring</a></p>
+<p><a href="https://github.com/GoogleChromeLabs/first-input-delay" target="_blank">First Input Delay</a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
