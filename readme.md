@@ -9,7 +9,7 @@ A collection of code labs authored by Google Developer Group members. Code labs 
 
 * [Sample Code Lab](./sample) - Generated from src/sample.md
 * [JS- Intro](./js-intro) - An introduction to Javascript
-* [Firebase Deployment](./fn-deploy) - A code lab on firebase hosting, performance and analytics
+* [Firebase Deployment](./fb-deploy) - A code lab on firebase hosting, performance and analytics
 
 ## Contributing
 1. Add your codelab's readme file to the src directory and any image in src/img.  
